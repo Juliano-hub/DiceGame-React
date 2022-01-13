@@ -28,7 +28,7 @@ function App() {
       <body className ='ColorBackground'>
         <div padding = '20px'> 
           <h1>AAAA</h1>
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[0]} DiceID = {0} />
+          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[0]} DiceID = '0' />
           <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[1]} DiceID = '1' />
           <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[2]} DiceID = '2' /> <br/>
           <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[3]} DiceID = '3' />
