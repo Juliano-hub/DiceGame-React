@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.ColorBackground{
+  height: 400px;
+  width: 800px;
+  background-color: rgb(163, 226, 163);
+}
+
+.DiceShape{
+  padding: 0px;
+  font-size: 20px;
+  margin: 4px 2px;
+  height:70px;
+  width:70px;
+  text-align: center;
+}
+
+.DiceShapeBlue{
+  padding: 0px;
+  font-size: 20px;
+  margin: 4px 2px;
+  height:70px;
+  width:70px;
+  text-align: center;
+  background-color: rgb(65, 205, 240);
+}
+
+.RollButton{
+  margin-left: +30px;
+}

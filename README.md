@@ -1,1 +1,1 @@
-# Notepad-React
+# DiceGame-React
