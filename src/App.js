@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Dice from './components/Dice'
 import './App.css'
+
+let FreezeVector = [false, false, false, false, false, false]
 
 function App() {
   let [NumbersVector, setNumbersVector] = useState(() => {
@@ -8,10 +10,24 @@ function App() {
     return initialState.map((Number) => GenerateRandomNumber())
   })
 
+  useEffect(() => {
+  
+    if(NumbersVector.every((val, ind, arr) => val === arr[0]) === true){
+      window.alert('You Win!!! The game will be reset')
+      window.location.reload();
+    }
+  
+  })
+
   function Roll(){
     console.log('Antes de tudo:', FreezeVector)
 
-    setNumbersVector( NumbersVector.map((Number) => GenerateRandomNumber()))
+    setNumbersVector( NumbersVector.map((Number, i) =>{
+      console.log('Valor de i:', i)
+      if(FreezeVector[i] !== true)
+        return GenerateRandomNumber()
+      return Number
+    }))
     
     console.log('Vetor dentro do roll:', NumbersVector)
   }
@@ -21,8 +37,6 @@ function App() {
     let max = Math.floor(10);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-
-  let FreezeVector = [false, false, false, false, false, false]
 
     return (
       <body className ='ColorBackground'>
