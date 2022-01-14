@@ -20,7 +20,6 @@ const Dice = (props) =>{
             props.CurrentFreeze[props.DiceID] = false
         }
 
-        console.log('MUDANDO:', props.CurrentFreeze[props.DiceID])
     }
 
     return(

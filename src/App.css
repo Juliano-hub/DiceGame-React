@@ -37,10 +37,24 @@
   }
 }
 
-.ColorBackground{
+
+body{
+  background-color: rgb(35, 56, 94);
+}
+
+.GameArea{
   height: 400px;
-  width: 800px;
+  width: 400px;
   background-color: rgb(163, 226, 163);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-width: thin;
+  border-style: ridge;
+  border-color: black;
+  box-shadow: inset 0 0 1em rgb(29, 45, 73);
 }
 
 .DiceShape{
@@ -50,6 +64,9 @@
   height:70px;
   width:70px;
   text-align: center;
+  border-width: thin;
+  border-style: ridge;
+  border-radius: 12px
 }
 
 .DiceShapeBlue{
@@ -60,8 +77,19 @@
   width:70px;
   text-align: center;
   background-color: rgb(65, 205, 240);
+  border-radius: 12px
 }
 
 .RollButton{
-  margin-left: +30px;
+  margin-top: 20px;
+  height: 30px;
+  width: auto;
+  margin-left: center;
+  border-width: thin;
+  border-style: ridge;
+  border-radius: 12px
+}
+
+.Centering{
+  text-align: center;
 }

@@ -13,23 +13,22 @@ function App() {
   useEffect(() => {
   
     if(NumbersVector.every((val, ind, arr) => val === arr[0]) === true){
-      window.alert('You Win!!! The game will be reset')
+      window.alert('Você venceu!!! O jogo vai ser reiniciado!')
       window.location.reload();
     }
   
   })
 
   function Roll(){
-    console.log('Antes de tudo:', FreezeVector)
+    //console.log('Antes de tudo:', FreezeVector)
 
     setNumbersVector( NumbersVector.map((Number, i) =>{
-      console.log('Valor de i:', i)
       if(FreezeVector[i] !== true)
         return GenerateRandomNumber()
       return Number
     }))
     
-    console.log('Vetor dentro do roll:', NumbersVector)
+    //console.log('Vetor dentro do roll:', NumbersVector)
   }
 
   function GenerateRandomNumber(){
@@ -39,18 +38,20 @@ function App() {
   }
 
     return (
-      <body className ='ColorBackground'>
-        <div padding = '20px'> 
-          <h1>AAAA</h1>
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[0]} DiceID = '0' />
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[1]} DiceID = '1' />
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[2]} DiceID = '2' /> <br/>
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[3]} DiceID = '3' />
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[4]} DiceID = '4' />
-          <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[5]} DiceID = '5' /> <br/>
-          <button className = 'RollButton' onClick={() => Roll()}>Roll all unmarked dices</button>
+        <div className ='GameArea'>
+          <div className = 'Centering'> 
+            <h1>Dice Game</h1>
+            <p>Tenha todos os dados com o mesmo valor para ganhar!</p>
+            <p>Aperte em um dado para manter seu valor durante a próxima rolagem.</p>
+            <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[0]} DiceID = '0' />
+            <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[1]} DiceID = '1' />
+            <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[2]} DiceID = '2' /> <br/>
+            <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[3]} DiceID = '3' />
+            <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[4]} DiceID = '4' />
+            <Dice CurrentFreeze = {FreezeVector}  CurrentNumber = {NumbersVector[5]} DiceID = '5' /> <br/>
+            <button className = 'RollButton' onClick={() => Roll()}>Rodar dados não marcados</button>
+          </div>
         </div>
-      </body>
     )
 }
 
